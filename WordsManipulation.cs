@@ -19,7 +19,7 @@ namespace PadawansTask8
             string slovo_now = "";
             for (int i = 0; i < text.Length; i++)
             {
-                if (razd.Contains(text[i].ToString()) || i+1==text.Length)
+                if (razd.Contains(text[i].ToString()))
                 {
                     if (!slova.Contains(' ' + slovo_now + ' '))
                     {
@@ -33,6 +33,9 @@ namespace PadawansTask8
                 else
                     slovo_now += text[i];
             }
+            if (slovo_now != "")
+                if (!slova.Contains(' ' + slovo_now + ' '))
+                    otv += slovo_now;
             text = otv;
         }
     }
